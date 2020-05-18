@@ -16,6 +16,10 @@
 
 {% block page_css %}
   {{ css_bundle('moss') }}
+
+{% if switch('moss-covid-banner', ['en-US', 'en-GB', 'en-CA']) %}
+  {{ css_bundle('moss-covid-banner') }}
+{% endif %}
 {% endblock %}
 
 {% block content %}
