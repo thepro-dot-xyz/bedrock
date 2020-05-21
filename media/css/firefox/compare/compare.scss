@@ -345,4 +345,8 @@ $image-path: "/media/protocol/img";
     margin-bottom: $layout-2xl;
     margin-top: $layout-lg;
     padding-top: $spacing-lg;
+
+    p, br {
+        margin-bottom: $spacing-sm;
+    }
 }

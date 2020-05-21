@@ -133,11 +133,13 @@ urlpatterns = (
 
     page('firefox/features/safebrowser', 'firefox/features/safebrowser.html'),
 
-    page('firefox/browsers/compare', 'firefox/compare/index.html'),
-    page('firefox/browsers/compare/chrome', 'firefox/compare/chrome.html'),
-    page('firefox/browsers/compare/ie', 'firefox/compare/ie.html'),
-    page('firefox/browsers/compare/opera', 'firefox/compare/opera.html'),
-    page('firefox/browsers/compare/safari', 'firefox/compare/safari.html'),
+    page('firefox/browsers/compare', 'firefox/compare/index.html', ftl_files=['firefox/compare', 'firefox/compare/shared']),
+    page('firefox/browsers/compare/brave', 'firefox/compare/brave.html', ftl_files=['firefox/compare/brave', 'firefox/compare/shared']),
+    page('firefox/browsers/compare/chrome', 'firefox/compare/chrome.html', ftl_files=['firefox/compare/chrome', 'firefox/compare/shared']),
+    page('firefox/browsers/compare/edge', 'firefox/compare/edge.html', ftl_files=['firefox/compare/edge', 'firefox/compare/shared']),
+    page('firefox/browsers/compare/ie', 'firefox/compare/ie.html', ftl_files=['firefox/compare/ie', 'firefox/compare/shared']),
+    page('firefox/browsers/compare/opera', 'firefox/compare/opera.html', ftl_files=['firefox/compare/opera', 'firefox/compare/shared']),
+    page('firefox/browsers/compare/safari', 'firefox/compare/safari.html', ftl_files=['firefox/compare/safari', 'firefox/compare/shared']),
 
     # Issue 8641
     page('firefox/browsers/best-browser', 'firefox/browsers/best-browser.html'),

@@ -4,9 +4,11 @@
 
 {% extends "firefox/base/base-protocol.html" %}
 
-{% block page_title %}{{ ftl('compare-ie-firefox-vs-internet-explorer') }}{% endblock %}
+{% add_lang_files "firefox/compare/edge" "firefox/compare/shared" %}
 
-{% block page_desc %}{{ ftl('compare-ie-compare-internet-explorer-to') }}{% endblock %}
+{% block page_title %}{{ ftl('compare-edge-firefox-vs-microsoft-edge-which') }}{% endblock %}
+
+{% block page_desc %}{{ ftl('compare-edge-compare-microsoft-edge-to-the') }}{% endblock %}
 
 {% block page_css %}
 {{ css_bundle('compare-details') }}
@@ -15,14 +17,14 @@
 {% block content %}
 {% include '/firefox/compare/includes/subnav.html' %}
 
-<section class="mzp-c-hero compare-details-hero compare-details-hero--ie">
+<section class="mzp-c-hero compare-details-hero compare-details-hero--edge">
   <div class="mzp-l-content l-compare-details-content">
     <div class="mzp-c-hero-body">
       <div class="compare-details-hero-image">
-          <img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="">
-          <img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="">
+        <img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="">
+        <img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="">
       </div>
-      <h1 class="mzp-c-hero-title">{{ ftl('compare-ie-comparing-firefox-browser-with') }}</h1>
+      <h1 class="mzp-c-hero-title">{{ ftl('compare-edge-comparing-firefox-browser-with') }}</h1>
     </div>
   </div>
 </section>
@@ -30,13 +32,11 @@
 <div class="mzp-l-content l-compare-details-content">
   <article class="mzp-c-article">
     <section class="compare-details-section-summary">
-        <p class="compare-details-section-intro">{{ ftl('compare-ie-while-microsofts-internet-explorer') }}</p>
+        <p class="compare-details-section-intro">{{ ftl('compare-edge-with-windows-10-microsoft-introduced') }}</p>
 
-        <p>{{ ftl('compare-ie-microsoft-discontinued-its-internet') }}</p>
+        <p>{{ ftl('compare-edge-here-well-compare-our-firefox') }}</p>
 
-        <p>{{ ftl('compare-ie-here-well-compare-our-firefox') }}</p>
-
-        {{ high_res_img('img/firefox/compare/compare-browser-ie.png', {'alt': '', 'width': '543', 'height': '424', 'class': 'compare-details-image'}) }}
+        {{ high_res_img('img/firefox/compare/compare-browser-edge.png', {'alt': '', 'width': '545', 'height': '424', 'class': 'compare-details-image'}) }}
     </section>
 
     <section class="compare-section-privacy">
@@ -49,7 +49,7 @@
             <tr>
               <th>{{ ftl('compare-shared-security-and-privacy') }}</th>
               <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-firefox') }}"></th>
-              <th scope="col"><img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-ie') }}"></th>
+              <th scope="col"><img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-edge') }}"></th>
             </tr>
           </thead>
           <tbody>
@@ -61,7 +61,7 @@
             <tr>
               <th scope="row">{{ ftl('compare-shared-blocks-third-party-tracking') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ ftl('compare-shared-blocks-cryptomining-scripts') }}</th>
@@ -71,19 +71,22 @@
             <tr>
               <th scope="row">{{ ftl('compare-shared-blocks-social-trackers') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
           </tbody>
         </table>
 
-      <p>{{ ftl('compare-ie-if-you-havent-moved-on-from-using', attrs='href="https://www.telegraph.co.uk/technology/2019/02/08/stop-using-internet-explorer-warns-microsofts-security-chief/" rel="external noopener" data-cta-type="link" data-cta-name="Microsoft security chief warned"'|safe) }}</p>
+      <p>{{ ftl('compare-edge-edge-is-integrated-into-the') }}</p>
 
-      <p>{{ ftl('compare-ie-microsoft-is-no-longer-supporting') }}</p>
+      <p>{{ ftl('compare-edge-at-firefox-we-pride-ourselves', fallback='compare-edge-at-firefox-our-privacy-fallback', attrs='href="%s" data-cta-type="link" data-cta-name="privacy policy"'|safe|format(url('privacy.notices.firefox'))) }}</p>
 
-      <img src="{{ static('img/firefox/compare/compare-privacy-locks.svg') }}" alt="" height="217" width="320" class="compare-details-image">
+      <img src="{{ static('img/firefox/compare/compare-privacy-eyes.svg') }}" alt="" height="217" width="320" class="compare-details-image">
 
-      <p>{{ ftl('compare-ie-so-whats-the-solution-if-your', fallback='compare-ie-so-whats-the-solution-if-your-fallback', lockwise='href="%s" data-cta-type="link" data-cta-name="Lockwise"'|safe|format(url('firefox.lockwise.lockwise')),
-                 privacy='href="%s" data-cta-type="link" data-cta-name="privacy policy"'|safe|format(url('privacy.notices.firefox'))) }}</p>
+      <p>{{ ftl('compare-edge-your-privacy-protections-shows', attrs='href="%s" data-cta-text="Privacy Protections" data-cta-type="link"'|safe|format(url('firefox.privacy.products'))) }}</p>
+
+      <p>{{ ftl('compare-edge-in-firefox-private-browsing') }}</p>
+
+      <p>{{ ftl('compare-edge-both-browsers-are-relatively') }}</p>
 
       {% include '/firefox/compare/includes/download-menu-list.html' %}
 
@@ -99,14 +102,14 @@
             <tr>
               <th>{{ ftl('compare-shared-utility') }}</th>
               <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-firefox') }}"></th>
-              <th scope="col"><img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-ie') }}"></th>
+              <th scope="col"><img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-edge') }}"></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">{{ ftl('compare-shared-autoplay-blocking') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ ftl('compare-shared-tab-browsing') }}</th>
@@ -151,19 +154,24 @@
             <tr>
               <th scope="row">{{ ftl('compare-shared-in-browser-screenshot-tool') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
           </tbody>
         </table>
 
-      <p>{{ ftl('compare-ie-alarmingly-4-to-5-of-all-desktop', fallback='compare-ie-alarmingly-4-to-5-of-all-desktop-fallback') }}</p>
+      <p>{{ ftl('compare-edge-firefox-is-a-fast-and-open') }}</p>
 
-      <p>{{ ftl('compare-ie-really-the-only-reasons-to-use') }}</p>
+      <p>{{ ftl('compare-edge-since-edge-has-moved-to-the') }}</p>
 
-      <p>
-        {{ ftl('compare-ie-on-the-other-end-of-the-spectrum', fallback='compare-ie-on-the-other-end-of-the-spectrum-fallback', pocket='href="%s" data-cta-type="link" data-cta-name="Pocket"'|safe|format(url('firefox.pocket')),
-                 products='href="%s" data-cta-type="link" data-cta-name="our other Firefox products"'|safe|format(url('firefox'))) }}
-      </p>
+      <p>{{ ftl('compare-edge-edge-has-some-nice-ui-features') }}</p>
+
+      <p>{{ ftl('compare-edge-firefox-features-a-scrolling', attrs='href="%s" data-cta-type="link" data-cta-name="Pocket feature"'|safe|format(url('firefox.pocket'))) }}</p>
+
+      <p>{{ ftl('compare-edge-firefox-and-edge-both-offer') }}</p>
+
+      <p>{{ ftl('compare-edge-firefox-also-includes-lots', attrs='href="https://support.mozilla.org/kb/enhanced-tracking-protection-firefox-desktop" rel="external noopener" data-cta-text="Enhanced Tracking Protection" data-cta-type="link"'|safe) }}</p>
+
+      <p>{{ ftl('compare-edge-out-of-the-gate-firefox-has') }}</p>
 
       {% include '/firefox/compare/includes/download-menu-list.html' %}
 
@@ -179,24 +187,24 @@
             <tr>
               <th>{{ ftl('compare-shared-portability') }}</th>
               <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-firefox') }}"></th>
-              <th scope="col"><img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-ie') }}"></th>
+              <th scope="col"><img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-edge') }}"></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">{{ ftl('compare-shared-os-availability') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ ftl('compare-shared-mobile-os-availability') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ ftl('compare-shared-syncs-with-mobile') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ ftl('compare-shared-password-management') }}</th>
@@ -206,14 +214,16 @@
             <tr>
               <th scope="row">{{ ftl('compare-shared-master-password') }}</th>
               <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ ftl('compare-shared-no') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ ftl('compare-shared-yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
           </tbody>
         </table>
 
-      <p>{{ ftl('compare-ie-as-microsoft-has-made-the-move') }}</p>
+      <p>{{ ftl('compare-edge-with-internet-explorer-microsoft', fallback='compare-edge-with-internet-explorer-fallback') }}</p>
 
-      <p>{{ ftl('compare-ie-firefox-works-on-any-platform') }}</p>
+      <p>{{ ftl('compare-edge-firefox-has-been-available', attrs='href="%s" data-cta-type="link" data-cta-name="free account"'|safe|format(url('firefox.accounts'))) }}</p>
+
+      <p>{{ ftl('compare-edge-edge-also-allows-you-to-connect', fallback='compare-edge-edge-also-allows-you-to-fallback') }}</p>
 
       {% include '/firefox/compare/includes/download-menu-list.html' %}
 
@@ -224,19 +234,16 @@
         <h2>{{ ftl('compare-shared-overall-assessment') }}</h2>
       </header>
 
-      <p>{{ ftl('compare-ie-there-was-a-time-not-so-long') }}</p>
+      <p>{{ ftl('compare-edge-aside-from-sucking-up-a-lot', attrs='href="%s" data-cta-type="link" data-cta-name="Mozilla"'|safe|format(url('mozorg.home'))) }}</p>
 
-      <p>
-        {# Download link should be locale neutral. See issue #7982 #}
-        {{ ftl('compare-ie-our-opinion-is-just-to-go-with', attrs='href="/firefox/download/thanks/" data-cta-type="link" data-cta-name="download Firefox"'|safe) }}
-      </p>
+      <p>{{ ftl('compare-edge-the-bottom-line-is-that-while') }}</p>
 
       <div class="compare-content compare-version-disclaimer">
         <p>
           {{ ftl('compare-shared-the-comparisons-made-here') }}
           <br>
           {{ ftl('compare-shared-brand-name-firefox') }} (76) |
-          {{ ftl('compare-shared-brand-name-ie') }} (11)
+          {{ ftl('compare-shared-brand-name-edge') }} (81)
           <br>
           {{ ftl('compare-shared-this-page-updated-semi-quarterly') }}
         </p>
@@ -254,3 +261,4 @@
 {% block js %}
   {{ js_bundle('firefox_compare_details') }}
 {% endblock %}
+
