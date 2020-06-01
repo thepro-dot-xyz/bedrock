@@ -1,24 +1,15 @@
 version: '3.4'
 services:
-  # Run browser-sync and compile static assets.
-  #
-  # This is the primary server and it proxies
-  # the Django app so that it can add the fancy
-  # browser refresh JS.
+  # compile static assets using Webpack.
   assets:
     build:
       context: .
       target: assets
     image: mozmeao/bedrock_assets:${GIT_COMMIT:-latest}
-    command: gulp
-    ports:
-      - "8000-8010:8000-8010"
+    command: npm run watch
     volumes:
       - ./media/:/app/media:delegated
-      - ./bedrock/:/app/bedrock:delegated
-    environment:
-      BS_PROXY_URL: "app:8080"
-      BS_OPEN_BROWSER: "false"
+      - assets_volume:/app/assets
 
   # the django app
   app:
@@ -26,10 +17,10 @@ services:
       context: .
       target: devapp
     image: mozmeao/bedrock_test:${GIT_COMMIT:-latest}
-    command: python manage.py runserver 0.0.0.0:8080
+    command: python manage.py runserver 0.0.0.0:8000
     env_file: .env
     ports:
-      - "8080:8080"
+      - "8000:8000"
     volumes:
       - ./bedrock/:/app/bedrock:delegated
       - ./bin/:/app/bin:delegated
@@ -45,6 +36,7 @@ services:
       - ./locale/:/app/locale:delegated
       - ./l10n/:/app/l10n:delegated
       - ./git-repos/:/app/git-repos:delegated
+      - assets_volume:/app/assets
 
   # run the tests against local changes
   test:
@@ -110,3 +102,6 @@ services:
       context: .
       target: app-base
     image: mozmeao/bedrock_code:${GIT_COMMIT:-latest}
+
+volumes:
+  assets_volume:
