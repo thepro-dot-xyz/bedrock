@@ -216,6 +216,7 @@ def migrate(ctx):
                         "Android": TERM_REFERENCE("brand-name-android"),
                         "Windows": TERM_REFERENCE("brand-name-windows"),
                         "macOS": TERM_REFERENCE("brand-name-mac"),
+                        "Mac": TERM_REFERENCE("brand-name-mac"),
                     }
                 )
             ),

@@ -6,16 +6,14 @@
 
 {% block page_title %}{{ ftl('compare-brave-firefox-vs-brave-which-is') }}{% endblock %}
 
-{% block page_desc %}
-{{ ftl('compare-brave-compare-brave-to-the-firefox') }}
-{% endblock %}
+{% block page_desc %}{{ ftl('compare-brave-compare-brave-to-the-firefox') }}{% endblock %}
 
 {% block page_css %}
 {{ css_bundle('compare-details') }}
 {% endblock %}
 
 {% block content %}
-{% include '/firefox/compare/includes/subnav.html' %}
+{% include '/firefox/browsers/compare/includes/subnav.html' %}
 
 <section class="mzp-c-hero compare-details-hero compare-details-hero--brave">
   <div class="mzp-l-content l-compare-details-content">
@@ -74,8 +72,8 @@
         </tbody>
       </table>
 
-      <p>{{ ftl('compare-brave-the-brave-browser-like-so', opera='href="%s" data-cta-type="link" data-cta-name="Opera"'|safe|format(url('firefox.compare.opera')),
-                 edge='href="%s" data-cta-type="link" data-cta-name="Edge"'|safe|format(url('firefox.compare.edge'))) }}</p>
+      <p>{{ ftl('compare-brave-the-brave-browser-like-so', opera='href="%s" data-cta-type="link" data-cta-name="Opera"'|safe|format(url('firefox.browsers.compare.opera')),
+                 edge='href="%s" data-cta-type="link" data-cta-name="Edge"'|safe|format(url('firefox.browsers.compare.edge'))) }}</p>
 
       <p>{{ ftl('compare-brave-brave-differentiates-itself') }}</p>
 
@@ -91,9 +89,9 @@
           extension='href="https://addons.mozilla.org/addon/https-everywhere/" rel="external noopener" data-cta-text="HTTPS Everywhere" data-cta-type="link"'|safe,
           privacy='href="%s" data-cta-type="link" data-cta-name="Privacy Report"'|safe|format(url('firefox.privacy.products'))) }}</p>
 
-      <p>{{ ftl('compare-brave-the-bottom-line-is-that-even') }}</p></p>
+      <p>{{ ftl('compare-brave-the-bottom-line-is-that-even') }}</p>
 
-      {% include '/firefox/compare/includes/download-menu-list.html' %}
+      {% include '/firefox/browsers/compare/includes/download-menu-list.html' %}
 
     </section>
 
@@ -106,8 +104,8 @@
         <thead>
           <tr>
             <th>{{ ftl('compare-shared-utility') }}</th>
-            <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ _('Firefox') }}"></th>
-            <th scope="col"><img src="{{ static('img/logos/brave/logo-brave.png') }}" height="36" width="36" alt="{{ _('Brave') }}"></th>
+            <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-firefox') }}"></th>
+            <th scope="col"><img src="{{ static('img/logos/brave/logo-brave.png') }}" height="36" width="36" alt="{{ ftl('compare-shared-brand-name-brave') }}"></th>
           </tr>
         </thead>
         <tbody>
@@ -174,7 +172,7 @@
 
       <p>{{ ftl('compare-brave-brave-also-supports-google') }}</p>
 
-      {% include '/firefox/compare/includes/download-menu-list.html' %}
+      {% include '/firefox/browsers/compare/includes/download-menu-list.html' %}
 
     </section>
 
@@ -228,7 +226,7 @@
 
       <p>{{ ftl('compare-brave-brave-also-recently-gained') }}</p>
 
-      {% include '/firefox/compare/includes/download-menu-list.html' %}
+      {% include '/firefox/browsers/compare/includes/download-menu-list.html' %}
 
     </section>
 

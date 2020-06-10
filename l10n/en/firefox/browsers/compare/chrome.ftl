@@ -29,6 +29,8 @@ compare-chrome-ultimately-its-up-to-you = Ultimately, it’s up to you to decide
 
 # "we've been heads down" means we've been hard at work. Alternative: "we've been hard at work." "Heads down" is when someone is looking down to avoid distractions and focus on the immediate task in front of them.
 compare-chrome-fast-forward-to-today-the = Fast-forward to today, the competitive landscape for browsers has changed with many people beginning to question just what is happening to their online data such as browsing history, passwords, and other sensitive information. A lot has changed since 2008 when { -brand-name-chrome } came onto the scene. At { -brand-name-firefox }, we’ve been heads down, working to redesign our interface and provide users with an ever growing number of privacy and performance enhancements as well as plenty of handy browser tools.
+
+# "Google Chrome" is a brand name.
 compare-chrome-and-so-here-we-are-the-browser = And so here we are, the browser-wars are escalating once again and it’s time to reevaluate and compare { -brand-name-firefox-browser } vs Google Chrome.
 compare-chrome-in-2008-google-introduced = In 2008, { -brand-name-google } introduced { -brand-name-chrome }, and its impact as an innovation in browser technology was immediate. It was faster for loading sites, took up minimal screen space and offered an undeniably simple user interface.
 compare-chrome-in-fact-both-chrome-and-firefox = In fact, both { -brand-name-chrome } and { -brand-name-firefox } have rigorous security in place. Both include a thing called “sandboxing” which separates the processes of the browser so something like a harmful website doesn’t infect other parts of your laptop or other device.

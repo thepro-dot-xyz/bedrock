@@ -168,6 +168,7 @@ compare-opera-operas-privacy-policy-lacks = {COPY(opera, "Opera’s privacy poli
                         "Linux": TERM_REFERENCE("brand-name-linux"),
                         "Android": TERM_REFERENCE("brand-name-android"),
                         "iOS": TERM_REFERENCE("brand-name-ios"),
+                        "Mac": TERM_REFERENCE("brand-name-mac"),
                     }
                 )
             ),

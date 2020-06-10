@@ -50,6 +50,7 @@ compare-shared-brand-name-ie = { -brand-name-ie }
 compare-shared-brand-name-opera = { -brand-name-opera }
 compare-shared-brand-name-safari = { -brand-name-safari }
 compare-shared-brand-name-brave = { -brand-name-brave }
+compare-shared-download-firefox = Download { -brand-name-firefox }
 compare-shared-download-firefox-browser = Download { -brand-name-firefox-browser }
 compare-shared-download-the-app = Download the app
 compare-shared-desktop = Desktop

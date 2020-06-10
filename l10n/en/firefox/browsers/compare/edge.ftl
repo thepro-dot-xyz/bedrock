@@ -53,9 +53,8 @@ compare-edge-firefox-also-includes-lots = { -brand-name-firefox } also includes 
 # "Out of the gate" means from the very start. Alternative: "From the start,". Race horses are held behind a gate that is opened to release all the horses at the same time at the start of the race, so a horse that leads the race from the very start is said to lead "right out of the gate."
 compare-edge-out-of-the-gate-firefox-has = Out of the gate, { -brand-name-firefox } has more features and integrations built into the browser and readily available on download. And while both browsers have a tremendous number of add-ons and extensions available, Edge’s compatibility with Google’s Chromium platform gives it the advantage in terms of sheer numbers.
 
-# "Mac" is a brand name.
-compare-edge-with-internet-explorer-microsoft = With { -brand-name-ie }, { -brand-name-microsoft } learned from its lack of availability across platforms and made { -brand-name-edge } readily available on { -brand-name-ios }, { -brand-name-android }, { -brand-name-windows }, Mac, and soon { -brand-name-linux }.
-compare-edge-with-internet-explorer-fallback = With { -brand-name-ie }, { -brand-name-microsoft } learned from its lack of availability across platforms and made { -brand-name-edge } available for { -brand-name-mac } and { -brand-name-android }. The software is now readily available on { -brand-name-ios }, { -brand-name-android }, { -brand-name-windows } and Mac.
+compare-edge-with-internet-explorer-microsoft = With { -brand-name-ie }, { -brand-name-microsoft } learned from its lack of availability across platforms and made { -brand-name-edge } readily available on { -brand-name-ios }, { -brand-name-android }, { -brand-name-windows }, { -brand-name-mac }, and soon { -brand-name-linux }.
+compare-edge-with-internet-explorer-fallback = With { -brand-name-ie }, { -brand-name-microsoft } learned from its lack of availability across platforms and made { -brand-name-edge } available for { -brand-name-mac } and { -brand-name-android }. The software is now readily available on { -brand-name-ios }, { -brand-name-android }, { -brand-name-windows } and { -brand-name-mac }.
 
 # Variables:
 #   $attrs (string) - link to /firefox/accounts/ with additional attributes for analytics
