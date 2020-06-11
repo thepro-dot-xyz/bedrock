@@ -11,6 +11,7 @@
 -brand-name-apple = Apple
 -brand-name-creative-commons = Creative Commons
 -brand-name-facebook = Facebook
+-brand-name-github = GitHub
 -brand-name-google = Google
 -brand-name-microsoft = Microsoft
 -brand-name-mozilla = Mozilla
